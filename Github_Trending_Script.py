@@ -213,8 +213,9 @@ if __name__ == "__main__":
     print("Scraping languages")
     df = get_languages(df)
     print("Cleaning languages")
+    cols = ["language 1", "language 2"]
     df = split_columns(df, cols)
     df = df.drop(columns=["language 1", "language 2"]) #droping the initial columns
-df.to_csv('Github_Trending.csv', mode='a', index=False, header=False)
-print("Finished scraping :)")
-df
+    df.to_csv('Github_Trending_Results.csv', index=False, header=True)
+    print("Finished scraping :)")
+    print(df)
